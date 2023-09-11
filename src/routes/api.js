@@ -9,8 +9,6 @@ const portfolioController = require("../controllers/portfolioController");
 const productController = require("../controllers/productController");
 
 
-
-
 // Create Blog router paths
 router.get('/blog/create',blogController.create);
 router.get('/blog/read', blogController.read);
@@ -40,7 +38,6 @@ router.get('/product/create',productController.create);
 router.get('/product/read', productController.read);
 router.get('/product/delete', productController.delete);
 router.get('/product/update', productController.update);
-
 
 
 // Export Router

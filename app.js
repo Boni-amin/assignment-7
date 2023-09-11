@@ -27,8 +27,21 @@ app.use(hpp());
 
 
 
+// Requset Security Rate Limiting
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100,
 
+});
+// Apply the Security rate limiting middleware to all requests
+app.use(limiter);
+
+
+
+
+// Create Api router paths
 app.use("/api", router);
+
 
 
 // Home page Route
@@ -43,8 +56,6 @@ app.get("*", (req, res) => {
         message: "Route not found"
     });
 });
-
-
 
 
 // Export app
